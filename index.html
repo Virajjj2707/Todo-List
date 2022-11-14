@@ -8,12 +8,21 @@
   <body class="bg-orange-300 flex justify-center items-center h-screen">
     <div class="w-full mx-3">
       <div class="text-center mb-5">
-        <h1>Todo List</h1>
+        <h1 class="text-5xl uppercase font-bold">Todo List</h1>
       </div>
       <div>
-        <form action="#" method="POST">
-          <input type="text" name="todo" placeholder="Enter Todo" />
-          <input type="submit" value="+" />
+        <form class="flex justify-center" action="#" method="POST">
+          <input
+            class="bg-orange-100 px-5 py-2 rounded-l-full"
+            type="text"
+            name="todo"
+            placeholder="Enter Todo"
+          />
+          <input
+            class="bg-orange-500 px-5 rounded-r-full"
+            type="submit"
+            value="+"
+          />
         </form>
       </div>
       <div>
