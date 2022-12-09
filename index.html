@@ -2,86 +2,68 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Todo List</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-orange-300 flex justify-center items-center h-screen">
-    <div class="w-full mx-3">
-      <div class="text-center mb-5">
-        <h1 class="text-5xl uppercase font-bold">Todo List</h1>
-      </div>
-      <div>
-        <form class="flex justify-center" action="#" method="POST">
-          <input
-            class="bg-orange-100 px-5 py-2 rounded-l-full"
-            type="text"
-            name="todo"
-            placeholder="Enter Todo"
-          />
-          <input
-            class="bg-orange-500 px-5 rounded-r-full"
-            type="submit"
-            value="+"
-          />
-        </form>
-      </div>
-      <div class="bg-white mt-5 p-4 rounded-lg shadow-lg">
-        <div>
-          <h1 class="bg-white mt-5 p-4 rounded-lg shadow-lg">Todo's</h1>
-          <small class="bg-white mt-5 p-4 rounded-lg shadow-lg"
-            >2 todos pending, 1 pending</small
-          >
-        </div>
-        <div>
-          <table>
-            <thead>
-              <tr class="bg-white mt-5 p-4 rounded-lg shadow-lg">
-                <!-- made changes here -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">#</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">Details</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">Action</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">#</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">Details</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">Action</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">#</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">Details</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">Action</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">Action</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">#</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">Details</th>
-                <th class="bg-white mt-5 p-4 rounded-lg shadow-lg">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Learn React</td>
-                <td>
-                  <button>x</button>
-                  <button>c</button>
-                </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Learn React</td>
-                <td>
-                  <button>x</button>
-                  <button>c</button>
-                </td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Learn React</td>
-                <td>
-                  <button>x</button>
-                  <button>c</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="app.js"></script>
+
+    <title>To Do List</title>
+  </head>
+
+  <body>
+    <header class="bg-success text-white p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <font face="Comic sans MS" size="11" color="black">
+              <strong>ToDo List</strong>
+            </font>
+          </div>
         </div>
       </div>
+    </header>
+
+    <div class="container mt-3">
+      <h2>Add Items</h2>
+
+      <label id="lblsuccess" class="text-success" style="display: none">
+      </label>
+
+      <form id="addForm">
+        <div class="row">
+          <div class="col-lg-7 col-md-7 col-sm-7">
+            <input
+              type="text"
+              onkeyup="toggleButton(this, 'submit')"
+              class="form-control"
+              id="item"
+            />
+          </div>
+
+          <div class="col-lg-5 col-md-5 col-sm-5">
+            <input
+              type="submit"
+              class="btn btn-dark"
+              id="submit"
+              value="Submit"
+              disabled
+            />
+          </div>
+        </div>
+      </form>
+
+      <h3 class="mt-4">Tasks</h3>
+
+      <form id="addForm">
+        <ul class="list-group" id="items"></ul>
+      </form>
     </div>
   </body>
 </html>
